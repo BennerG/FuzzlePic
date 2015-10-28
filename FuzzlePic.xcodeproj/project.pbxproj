@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6CE20DF1BE0A7BC00EFC9AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20DE1BE0A7BC00EFC9AA /* main.m */; };
+		A6CE20E21BE0A7BC00EFC9AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20E11BE0A7BC00EFC9AA /* AppDelegate.m */; };
+		A6CE20E51BE0A7BC00EFC9AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20E41BE0A7BC00EFC9AA /* ViewController.m */; };
+		A6CE20E81BE0A7BC00EFC9AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CE20E61BE0A7BC00EFC9AA /* Main.storyboard */; };
+		A6CE20EA1BE0A7BC00EFC9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CE20E91BE0A7BC00EFC9AA /* Assets.xcassets */; };
+		A6CE20ED1BE0A7BC00EFC9AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CE20EB1BE0A7BC00EFC9AA /* LaunchScreen.storyboard */; };
+		A6CE20F81BE0A7BD00EFC9AA /* FuzzlePicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20F71BE0A7BD00EFC9AA /* FuzzlePicTests.m */; };
+		A6CE21031BE0A7BD00EFC9AA /* FuzzlePicUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE21021BE0A7BD00EFC9AA /* FuzzlePicUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6CE20F41BE0A7BD00EFC9AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6CE20D21BE0A7BC00EFC9AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6CE20D91BE0A7BC00EFC9AA;
+			remoteInfo = FuzzlePic;
+		};
+		A6CE20FF1BE0A7BD00EFC9AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6CE20D21BE0A7BC00EFC9AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6CE20D91BE0A7BC00EFC9AA;
+			remoteInfo = FuzzlePic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A6CE20DA1BE0A7BC00EFC9AA /* FuzzlePic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuzzlePic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CE20DE1BE0A7BC00EFC9AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6CE20E01BE0A7BC00EFC9AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6CE20E11BE0A7BC00EFC9AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6CE20E31BE0A7BC00EFC9AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A6CE20E41BE0A7BC00EFC9AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A6CE20E71BE0A7BC00EFC9AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6CE20E91BE0A7BC00EFC9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6CE20EC1BE0A7BC00EFC9AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6CE20EE1BE0A7BC00EFC9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CE20F31BE0A7BD00EFC9AA /* FuzzlePicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuzzlePicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CE20F71BE0A7BD00EFC9AA /* FuzzlePicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicTests.m; sourceTree = "<group>"; };
+		A6CE20F91BE0A7BD00EFC9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CE20FE1BE0A7BD00EFC9AA /* FuzzlePicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuzzlePicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CE21021BE0A7BD00EFC9AA /* FuzzlePicUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicUITests.m; sourceTree = "<group>"; };
+		A6CE21041BE0A7BD00EFC9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6CE20D71BE0A7BC00EFC9AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CE20F01BE0A7BD00EFC9AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CE20FB1BE0A7BD00EFC9AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6CE20D11BE0A7BC00EFC9AA = {
+			isa = PBXGroup;
+			children = (
+				A6CE20DC1BE0A7BC00EFC9AA /* FuzzlePic */,
+				A6CE20F61BE0A7BD00EFC9AA /* FuzzlePicTests */,
+				A6CE21011BE0A7BD00EFC9AA /* FuzzlePicUITests */,
+				A6CE20DB1BE0A7BC00EFC9AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6CE20DB1BE0A7BC00EFC9AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE20DA1BE0A7BC00EFC9AA /* FuzzlePic.app */,
+				A6CE20F31BE0A7BD00EFC9AA /* FuzzlePicTests.xctest */,
+				A6CE20FE1BE0A7BD00EFC9AA /* FuzzlePicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6CE20DC1BE0A7BC00EFC9AA /* FuzzlePic */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE20E01BE0A7BC00EFC9AA /* AppDelegate.h */,
+				A6CE20E11BE0A7BC00EFC9AA /* AppDelegate.m */,
+				A6CE20E31BE0A7BC00EFC9AA /* ViewController.h */,
+				A6CE20E41BE0A7BC00EFC9AA /* ViewController.m */,
+				A6CE20E61BE0A7BC00EFC9AA /* Main.storyboard */,
+				A6CE20E91BE0A7BC00EFC9AA /* Assets.xcassets */,
+				A6CE20EB1BE0A7BC00EFC9AA /* LaunchScreen.storyboard */,
+				A6CE20EE1BE0A7BC00EFC9AA /* Info.plist */,
+				A6CE20DD1BE0A7BC00EFC9AA /* Supporting Files */,
+			);
+			path = FuzzlePic;
+			sourceTree = "<group>";
+		};
+		A6CE20DD1BE0A7BC00EFC9AA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE20DE1BE0A7BC00EFC9AA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6CE20F61BE0A7BD00EFC9AA /* FuzzlePicTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE20F71BE0A7BD00EFC9AA /* FuzzlePicTests.m */,
+				A6CE20F91BE0A7BD00EFC9AA /* Info.plist */,
+			);
+			path = FuzzlePicTests;
+			sourceTree = "<group>";
+		};
+		A6CE21011BE0A7BD00EFC9AA /* FuzzlePicUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE21021BE0A7BD00EFC9AA /* FuzzlePicUITests.m */,
+				A6CE21041BE0A7BD00EFC9AA /* Info.plist */,
+			);
+			path = FuzzlePicUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6CE20D91BE0A7BC00EFC9AA /* FuzzlePic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CE21071BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePic" */;
+			buildPhases = (
+				A6CE20D61BE0A7BC00EFC9AA /* Sources */,
+				A6CE20D71BE0A7BC00EFC9AA /* Frameworks */,
+				A6CE20D81BE0A7BC00EFC9AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FuzzlePic;
+			productName = FuzzlePic;
+			productReference = A6CE20DA1BE0A7BC00EFC9AA /* FuzzlePic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6CE20F21BE0A7BD00EFC9AA /* FuzzlePicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CE210A1BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePicTests" */;
+			buildPhases = (
+				A6CE20EF1BE0A7BD00EFC9AA /* Sources */,
+				A6CE20F01BE0A7BD00EFC9AA /* Frameworks */,
+				A6CE20F11BE0A7BD00EFC9AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6CE20F51BE0A7BD00EFC9AA /* PBXTargetDependency */,
+			);
+			name = FuzzlePicTests;
+			productName = FuzzlePicTests;
+			productReference = A6CE20F31BE0A7BD00EFC9AA /* FuzzlePicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A6CE20FD1BE0A7BD00EFC9AA /* FuzzlePicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CE210D1BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePicUITests" */;
+			buildPhases = (
+				A6CE20FA1BE0A7BD00EFC9AA /* Sources */,
+				A6CE20FB1BE0A7BD00EFC9AA /* Frameworks */,
+				A6CE20FC1BE0A7BD00EFC9AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6CE21001BE0A7BD00EFC9AA /* PBXTargetDependency */,
+			);
+			name = FuzzlePicUITests;
+			productName = FuzzlePicUITests;
+			productReference = A6CE20FE1BE0A7BD00EFC9AA /* FuzzlePicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6CE20D21BE0A7BC00EFC9AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Benjamin Thomas Gurrola";
+				TargetAttributes = {
+					A6CE20D91BE0A7BC00EFC9AA = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					A6CE20F21BE0A7BD00EFC9AA = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = A6CE20D91BE0A7BC00EFC9AA;
+					};
+					A6CE20FD1BE0A7BD00EFC9AA = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = A6CE20D91BE0A7BC00EFC9AA;
+					};
+				};
+			};
+			buildConfigurationList = A6CE20D51BE0A7BC00EFC9AA /* Build configuration list for PBXProject "FuzzlePic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6CE20D11BE0A7BC00EFC9AA;
+			productRefGroup = A6CE20DB1BE0A7BC00EFC9AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6CE20D91BE0A7BC00EFC9AA /* FuzzlePic */,
+				A6CE20F21BE0A7BD00EFC9AA /* FuzzlePicTests */,
+				A6CE20FD1BE0A7BD00EFC9AA /* FuzzlePicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6CE20D81BE0A7BC00EFC9AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CE20ED1BE0A7BC00EFC9AA /* LaunchScreen.storyboard in Resources */,
+				A6CE20EA1BE0A7BC00EFC9AA /* Assets.xcassets in Resources */,
+				A6CE20E81BE0A7BC00EFC9AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CE20F11BE0A7BD00EFC9AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CE20FC1BE0A7BD00EFC9AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6CE20D61BE0A7BC00EFC9AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CE20E51BE0A7BC00EFC9AA /* ViewController.m in Sources */,
+				A6CE20E21BE0A7BC00EFC9AA /* AppDelegate.m in Sources */,
+				A6CE20DF1BE0A7BC00EFC9AA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CE20EF1BE0A7BD00EFC9AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CE20F81BE0A7BD00EFC9AA /* FuzzlePicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6CE20FA1BE0A7BD00EFC9AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CE21031BE0A7BD00EFC9AA /* FuzzlePicUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6CE20F51BE0A7BD00EFC9AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6CE20D91BE0A7BC00EFC9AA /* FuzzlePic */;
+			targetProxy = A6CE20F41BE0A7BD00EFC9AA /* PBXContainerItemProxy */;
+		};
+		A6CE21001BE0A7BD00EFC9AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6CE20D91BE0A7BC00EFC9AA /* FuzzlePic */;
+			targetProxy = A6CE20FF1BE0A7BD00EFC9AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6CE20E61BE0A7BC00EFC9AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CE20E71BE0A7BC00EFC9AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6CE20EB1BE0A7BC00EFC9AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CE20EC1BE0A7BC00EFC9AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6CE21051BE0A7BD00EFC9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A6CE21061BE0A7BD00EFC9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6CE21081BE0A7BD00EFC9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FuzzlePic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6CE21091BE0A7BD00EFC9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FuzzlePic/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A6CE210B1BE0A7BD00EFC9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FuzzlePicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FuzzlePic.app/FuzzlePic";
+			};
+			name = Debug;
+		};
+		A6CE210C1BE0A7BD00EFC9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FuzzlePicTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FuzzlePic.app/FuzzlePic";
+			};
+			name = Release;
+		};
+		A6CE210E1BE0A7BD00EFC9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FuzzlePicUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FuzzlePic;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A6CE210F1BE0A7BD00EFC9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FuzzlePicUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePicUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FuzzlePic;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6CE20D51BE0A7BC00EFC9AA /* Build configuration list for PBXProject "FuzzlePic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CE21051BE0A7BD00EFC9AA /* Debug */,
+				A6CE21061BE0A7BD00EFC9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6CE21071BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CE21081BE0A7BD00EFC9AA /* Debug */,
+				A6CE21091BE0A7BD00EFC9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A6CE210A1BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CE210B1BE0A7BD00EFC9AA /* Debug */,
+				A6CE210C1BE0A7BD00EFC9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A6CE210D1BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CE210E1BE0A7BD00EFC9AA /* Debug */,
+				A6CE210F1BE0A7BD00EFC9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6CE20D21BE0A7BC00EFC9AA /* Project object */;
+}
