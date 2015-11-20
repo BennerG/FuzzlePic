@@ -75,7 +75,6 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
     return fetchedObjects;
 }
 
-
 #pragma mark - Update
 
 // method to check and update model
