@@ -1,25 +1,396 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hfx-TJ-e3n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Create New Fuzzle Pic View Controller-->
+        <scene sceneID="5ru-Xk-aUj">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="Yb1-vm-XH0" customClass="CreateNewFuzzlePicViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="6wx-8o-Xxz"/>
+                        <viewControllerLayoutGuide type="bottom" id="cWR-Rh-g08"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="HjD-na-a6u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Sjb-6r-DyZ">
+                                <rect key="frame" x="120" y="94" width="360" height="360"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="2d9-A4-dfF"/>
+                                    <constraint firstAttribute="width" constant="360" id="G0t-Qx-twe"/>
+                                </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpc-d4-mhS">
+                                <rect key="frame" x="25" y="474" width="550" height="120"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="v26-pq-ORI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Yb1-vm-XH0" id="GhB-Lw-yby"/>
+                                    <outlet property="delegate" destination="Yb1-vm-XH0" id="wir-Xl-dqk"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kpc-d4-mhS" firstAttribute="centerX" secondItem="HjD-na-a6u" secondAttribute="centerX" id="0gD-3W-TCz"/>
+                            <constraint firstItem="Sjb-6r-DyZ" firstAttribute="top" secondItem="6wx-8o-Xxz" secondAttribute="bottom" constant="30" id="8gx-ZV-gHa"/>
+                            <constraint firstItem="Kpc-d4-mhS" firstAttribute="leading" secondItem="HjD-na-a6u" secondAttribute="leadingMargin" constant="5" id="TUo-YF-tlC"/>
+                            <constraint firstItem="Kpc-d4-mhS" firstAttribute="top" secondItem="Sjb-6r-DyZ" secondAttribute="bottom" constant="20" id="gwx-f7-Rah"/>
+                            <constraint firstItem="Sjb-6r-DyZ" firstAttribute="centerX" secondItem="HjD-na-a6u" secondAttribute="centerX" id="k64-m3-hfc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kpc-d4-mhS" secondAttribute="trailing" constant="5" id="y5q-Lt-Rr7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CLX-j0-yXK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="tav-ol-l0W">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="Yb1-vm-XH0" id="OHJ-8n-laf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="CGi-Dv-WZv">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Yb1-vm-XH0" id="0mF-EQ-6QD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="tav-ol-l0W" id="TmM-dD-aHF"/>
+                        <outlet property="fuzzleSizeSelector" destination="Kpc-d4-mhS" id="69i-8O-HtZ"/>
+                        <outlet property="imageView" destination="Sjb-6r-DyZ" id="a8J-zG-8Wq"/>
+                        <outlet property="saveButton" destination="CGi-Dv-WZv" id="bNi-ay-gZQ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ylk-fl-W0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="3663" y="51"/>
+        </scene>
+        <!--Working Fuzzle Pic Collection View Controller-->
+        <scene sceneID="1Xp-Jf-sOm">
+            <objects>
+                <collectionViewController id="qUS-Fj-Wm8" customClass="WorkingFuzzlePicCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fgd-pN-xqP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="10" id="DZD-qv-rco">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9oC-lg-hQf" customClass="FuzzlePicCollectionViewCell">
+                                <rect key="frame" x="20" y="84" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2fA-cM-7uh">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="image" destination="2fA-cM-7uh" id="VZz-cC-0on"/>
+                                    <segue destination="YJp-nJ-vfG" kind="show" identifier="ViewWorking" id="EVN-9D-BjG"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="qUS-Fj-Wm8" id="yTW-EB-LXl"/>
+                            <outlet property="delegate" destination="qUS-Fj-Wm8" id="Bzb-Wv-Y4a"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="7l2-qe-jQ7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="BfC-AQ-Qvf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A8e-wu-g6t">
+                            <connections>
+                                <segue destination="2kY-xS-l0F" kind="presentation" identifier="addFuzzlePic" id="bWK-Od-CLB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="fgd-pN-xqP" id="vZ1-Q8-75F"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fq9-Z1-o7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="395"/>
+        </scene>
+        <!--Completed Fuzzle Pic Collection View Controller-->
+        <scene sceneID="i9p-3B-YG6">
+            <objects>
+                <collectionViewController id="cEv-gG-CCv" customClass="CompletedFuzzlePicCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="81I-aP-n1V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="18" minimumInteritemSpacing="10" id="xbD-C5-T7M">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="BrX-FV-sJW" customClass="FuzzlePicCollectionViewCell">
+                                <rect key="frame" x="20" y="84" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93S-Z6-eWL">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <outlet property="image" destination="93S-Z6-eWL" id="E4d-bm-a4Y"/>
+                                    <segue destination="XTZ-Fj-J5S" kind="presentation" identifier="ViewCompleted" id="SKJ-zL-GdZ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="cEv-gG-CCv" id="gJV-77-wWV"/>
+                            <outlet property="delegate" destination="cEv-gG-CCv" id="kzU-5S-rWm"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="K4F-Am-AGv">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="wec-HE-7WY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="77D-Eu-a8R"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="81I-aP-n1V" id="XML-Uq-VTp"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ie9-Y3-Z2G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2062" y="1057"/>
+        </scene>
+        <!--FuzzlePic-->
+        <scene sceneID="LE8-9H-Fx4">
+            <objects>
+                <viewController title="FuzzlePic" id="YJp-nJ-vfG" customClass="ViewWorkingFuzzlePicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lii-0M-uAn"/>
+                        <viewControllerLayoutGuide type="bottom" id="KaD-zp-6yh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DET-kx-S13">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OlT-iX-2TR">
+                                <rect key="frame" x="120" y="120" width="360" height="360"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="cnQ-US-FUp"/>
+                                    <constraint firstAttribute="height" constant="360" id="n0K-Pj-lMM"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OlT-iX-2TR" firstAttribute="centerX" secondItem="DET-kx-S13" secondAttribute="centerX" id="8Zz-5n-5eF"/>
+                            <constraint firstItem="OlT-iX-2TR" firstAttribute="centerY" secondItem="DET-kx-S13" secondAttribute="centerY" id="kBh-nk-rDq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q9l-vE-4Bn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Jvg-JU-vks">
+                            <connections>
+                                <action selector="deleteFuzzlePic:" destination="YJp-nJ-vfG" id="YbW-ZZ-V4d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fuzzlePicImageView" destination="OlT-iX-2TR" id="2wq-jZ-hya"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKu-AP-I5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885" y="737"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="anS-T4-h74">
+            <objects>
+                <tabBarController id="hfx-TJ-e3n" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9KX-08-QD7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Kyu-uS-abi" kind="relationship" relationship="viewControllers" id="7q0-cI-mQr"/>
+                        <segue destination="FPX-Cm-TgH" kind="relationship" relationship="viewControllers" id="2wq-a4-5lJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUk-fv-rah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="727"/>
+        </scene>
+        <!--Working-->
+        <scene sceneID="9aQ-gl-zFt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kyu-uS-abi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Working" id="ni2-Un-cLs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Ub-GE-U54">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qUS-Fj-Wm8" kind="relationship" relationship="rootViewController" id="w3W-Ap-nYG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9m-Ao-tKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="395"/>
+        </scene>
+        <!--Completed-->
+        <scene sceneID="n7l-n0-KFH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FPX-Cm-TgH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Completed" id="PMV-p4-f9r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HJt-k6-8Xi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cEv-gG-CCv" kind="relationship" relationship="rootViewController" id="xSY-xi-cCY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pP3-xm-HF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1318" y="1057"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LdF-Of-15O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2kY-xS-l0F" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="But-V7-azG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yb1-vm-XH0" kind="relationship" relationship="rootViewController" id="fuy-5W-aXF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hv7-X0-BDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885" y="51"/>
+        </scene>
+        <!--CompletedFuzzlePic-->
+        <scene sceneID="ZOW-sA-EU2">
+            <objects>
+                <viewController title="CompletedFuzzlePic" id="XTZ-Fj-J5S" customClass="ViewCompletedFuzzleViewController" sceneMemberID="viewController">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="e5J-V1-rui">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v5m-9O-apr">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="XXU-Bx-Jhh">
+                                    <rect key="frame" x="120" y="70" width="360" height="360"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="360" id="8M1-1A-vpR"/>
+                                        <constraint firstAttribute="width" constant="360" id="VDS-sM-14i"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="drh-kA-NHP">
+                                    <rect key="frame" x="5" y="505" width="590" height="90"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv9-nW-kiH">
+                                            <rect key="frame" x="0.0" y="0.0" width="590" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="New Fuzzle From Pic"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ry8-Ed-NkD">
+                                            <rect key="frame" x="0.0" y="30" width="590" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Delete Pic">
+                                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHY-vA-UZt">
+                                            <rect key="frame" x="0.0" y="60" width="590" height="30"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Cancel"/>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                </stackView>
+                            </subviews>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="drh-kA-NHP" secondAttribute="bottom" constant="5" id="6Lh-p9-1xg"/>
+                                <constraint firstAttribute="trailing" secondItem="drh-kA-NHP" secondAttribute="trailing" constant="5" id="E9D-ZW-tOC"/>
+                                <constraint firstItem="XXU-Bx-Jhh" firstAttribute="centerX" secondItem="v5m-9O-apr" secondAttribute="centerX" id="FAb-Wk-ao9"/>
+                                <constraint firstItem="drh-kA-NHP" firstAttribute="leading" secondItem="v5m-9O-apr" secondAttribute="leading" constant="5" id="RI1-Kk-psj"/>
+                                <constraint firstItem="XXU-Bx-Jhh" firstAttribute="centerY" secondItem="v5m-9O-apr" secondAttribute="centerY" constant="-50" id="T1p-Kc-WON"/>
+                            </constraints>
+                        </view>
+                        <animations/>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="completedFuzzlePicImageView" destination="XXU-Bx-Jhh" id="o2c-sp-DbI"/>
+                        <outlet property="visualEffectView" destination="e5J-V1-rui" id="reG-XS-rwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vif-2a-MAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885" y="1409"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera" width="92" height="76"/>
+    </resources>
 </document>

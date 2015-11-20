@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A66D73D21BEE60DC0017A51F /* SelectionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A66D73D11BEE60DC0017A51F /* SelectionButton.m */; };
+		A66D73DA1BEE9ED20017A51F /* img01.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D31BEE9ED20017A51F /* img01.JPG */; };
+		A66D73DB1BEE9ED20017A51F /* img02.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D41BEE9ED20017A51F /* img02.JPG */; };
+		A66D73DC1BEE9ED20017A51F /* img03.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D51BEE9ED20017A51F /* img03.JPG */; };
+		A66D73DD1BEE9ED20017A51F /* img04.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D61BEE9ED20017A51F /* img04.JPG */; };
+		A66D73DE1BEE9ED20017A51F /* img05.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D71BEE9ED20017A51F /* img05.JPG */; };
+		A66D73DF1BEE9ED20017A51F /* img06.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D81BEE9ED20017A51F /* img06.JPG */; };
+		A66D73E01BEE9ED20017A51F /* img07.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D91BEE9ED20017A51F /* img07.JPG */; };
+		A6A22AFD1BF436C000E46A1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6A22AFB1BF436C000E46A1B /* Model.xcdatamodeld */; };
+		A6A22AFF1BF4374700E46A1B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A22AFE1BF4374700E46A1B /* CoreData.framework */; };
+		A6A22B041BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A22B011BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.m */; };
+		A6A22B051BF4376F00E46A1B /* FuzzlePicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A22B031BF4376F00E46A1B /* FuzzlePicObject.m */; };
+		A6A22B081BF4385800E46A1B /* FuzzlePicObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A22B071BF4385800E46A1B /* FuzzlePicObjectController.m */; };
+		A6A22B0B1BF4390D00E46A1B /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A22B0A1BF4390D00E46A1B /* Stack.m */; };
 		A6CE20DF1BE0A7BC00EFC9AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20DE1BE0A7BC00EFC9AA /* main.m */; };
 		A6CE20E21BE0A7BC00EFC9AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20E11BE0A7BC00EFC9AA /* AppDelegate.m */; };
-		A6CE20E51BE0A7BC00EFC9AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20E41BE0A7BC00EFC9AA /* ViewController.m */; };
 		A6CE20E81BE0A7BC00EFC9AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CE20E61BE0A7BC00EFC9AA /* Main.storyboard */; };
 		A6CE20EA1BE0A7BC00EFC9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CE20E91BE0A7BC00EFC9AA /* Assets.xcassets */; };
 		A6CE20ED1BE0A7BC00EFC9AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CE20EB1BE0A7BC00EFC9AA /* LaunchScreen.storyboard */; };
 		A6CE20F81BE0A7BD00EFC9AA /* FuzzlePicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE20F71BE0A7BD00EFC9AA /* FuzzlePicTests.m */; };
 		A6CE21031BE0A7BD00EFC9AA /* FuzzlePicUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE21021BE0A7BD00EFC9AA /* FuzzlePicUITests.m */; };
+		A6CE21121BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE21111BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.m */; };
+		A6CE21151BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE21141BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.m */; };
+		A6CE21211BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE21201BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.m */; };
+		A6CE21241BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6CE21231BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.m */; };
+		A6CE21261BE1BB7900EFC9AA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = A6CE21251BE1BB7900EFC9AA /* camera.png */; };
+		A6E324D41BEB06DC00558A66 /* ViewCompletedFuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E324D31BEB06DC00558A66 /* ViewCompletedFuzzleViewController.m */; };
+		A6E324D71BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E324D61BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +55,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A66D73D01BEE60DC0017A51F /* SelectionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionButton.h; sourceTree = "<group>"; };
+		A66D73D11BEE60DC0017A51F /* SelectionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionButton.m; sourceTree = "<group>"; };
+		A66D73D31BEE9ED20017A51F /* img01.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img01.JPG; sourceTree = "<group>"; };
+		A66D73D41BEE9ED20017A51F /* img02.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img02.JPG; sourceTree = "<group>"; };
+		A66D73D51BEE9ED20017A51F /* img03.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img03.JPG; sourceTree = "<group>"; };
+		A66D73D61BEE9ED20017A51F /* img04.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img04.JPG; sourceTree = "<group>"; };
+		A66D73D71BEE9ED20017A51F /* img05.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img05.JPG; sourceTree = "<group>"; };
+		A66D73D81BEE9ED20017A51F /* img06.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img06.JPG; sourceTree = "<group>"; };
+		A66D73D91BEE9ED20017A51F /* img07.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img07.JPG; sourceTree = "<group>"; };
+		A6A22AFC1BF436C000E46A1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A6A22AFE1BF4374700E46A1B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A6A22B001BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuzzlePicObject+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		A6A22B011BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FuzzlePicObject+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		A6A22B021BF4376F00E46A1B /* FuzzlePicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzlePicObject.h; sourceTree = SOURCE_ROOT; };
+		A6A22B031BF4376F00E46A1B /* FuzzlePicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicObject.m; sourceTree = SOURCE_ROOT; };
+		A6A22B061BF4385800E46A1B /* FuzzlePicObjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzlePicObjectController.h; sourceTree = "<group>"; };
+		A6A22B071BF4385800E46A1B /* FuzzlePicObjectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicObjectController.m; sourceTree = "<group>"; };
+		A6A22B091BF4390D00E46A1B /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		A6A22B0A1BF4390D00E46A1B /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		A6CE20DA1BE0A7BC00EFC9AA /* FuzzlePic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuzzlePic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CE20DE1BE0A7BC00EFC9AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6CE20E01BE0A7BC00EFC9AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A6CE20E11BE0A7BC00EFC9AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A6CE20E31BE0A7BC00EFC9AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A6CE20E41BE0A7BC00EFC9AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6CE20E71BE0A7BC00EFC9AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6CE20E91BE0A7BC00EFC9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6CE20EC1BE0A7BC00EFC9AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +88,19 @@
 		A6CE20FE1BE0A7BD00EFC9AA /* FuzzlePicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuzzlePicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6CE21021BE0A7BD00EFC9AA /* FuzzlePicUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicUITests.m; sourceTree = "<group>"; };
 		A6CE21041BE0A7BD00EFC9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6CE21101BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkingFuzzlePicCollectionViewController.h; sourceTree = "<group>"; };
+		A6CE21111BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkingFuzzlePicCollectionViewController.m; sourceTree = "<group>"; };
+		A6CE21131BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzlePicCollectionViewCell.h; sourceTree = "<group>"; };
+		A6CE21141BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicCollectionViewCell.m; sourceTree = "<group>"; };
+		A6CE211F1BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletedFuzzlePicCollectionViewController.h; sourceTree = "<group>"; };
+		A6CE21201BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletedFuzzlePicCollectionViewController.m; sourceTree = "<group>"; };
+		A6CE21221BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewFuzzlePicViewController.h; sourceTree = "<group>"; };
+		A6CE21231BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewFuzzlePicViewController.m; sourceTree = "<group>"; };
+		A6CE21251BE1BB7900EFC9AA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		A6E324D21BEB06DC00558A66 /* ViewCompletedFuzzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewCompletedFuzzleViewController.h; sourceTree = "<group>"; };
+		A6E324D31BEB06DC00558A66 /* ViewCompletedFuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewCompletedFuzzleViewController.m; sourceTree = "<group>"; };
+		A6E324D51BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewWorkingFuzzlePicViewController.h; sourceTree = "<group>"; };
+		A6E324D61BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewWorkingFuzzlePicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A22AFF1BF4374700E46A1B /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +129,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A66D73CD1BEE60380017A51F /* Working */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE21101BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.h */,
+				A6CE21111BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.m */,
+				A6E324D51BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.h */,
+				A6E324D61BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.m */,
+			);
+			name = Working;
+			sourceTree = "<group>";
+		};
+		A66D73CE1BEE60510017A51F /* Completed */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE211F1BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.h */,
+				A6CE21201BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.m */,
+				A6E324D21BEB06DC00558A66 /* ViewCompletedFuzzleViewController.h */,
+				A6E324D31BEB06DC00558A66 /* ViewCompletedFuzzleViewController.m */,
+			);
+			name = Completed;
+			sourceTree = "<group>";
+		};
 		A6CE20D11BE0A7BC00EFC9AA = {
 			isa = PBXGroup;
 			children = (
+				A6A22AFE1BF4374700E46A1B /* CoreData.framework */,
 				A6CE20DC1BE0A7BC00EFC9AA /* FuzzlePic */,
 				A6CE20F61BE0A7BD00EFC9AA /* FuzzlePicTests */,
 				A6CE21011BE0A7BD00EFC9AA /* FuzzlePicUITests */,
@@ -103,8 +177,9 @@
 			children = (
 				A6CE20E01BE0A7BC00EFC9AA /* AppDelegate.h */,
 				A6CE20E11BE0A7BC00EFC9AA /* AppDelegate.m */,
-				A6CE20E31BE0A7BC00EFC9AA /* ViewController.h */,
-				A6CE20E41BE0A7BC00EFC9AA /* ViewController.m */,
+				A6E324D91BEE44D400558A66 /* View */,
+				A6E324DA1BEE44E200558A66 /* Controller */,
+				A6E324D81BEE44CA00558A66 /* Model */,
 				A6CE20E61BE0A7BC00EFC9AA /* Main.storyboard */,
 				A6CE20E91BE0A7BC00EFC9AA /* Assets.xcassets */,
 				A6CE20EB1BE0A7BC00EFC9AA /* LaunchScreen.storyboard */,
@@ -138,6 +213,76 @@
 				A6CE21041BE0A7BD00EFC9AA /* Info.plist */,
 			);
 			path = FuzzlePicUITests;
+			sourceTree = "<group>";
+		};
+		A6E324C31BEAF6A600558A66 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE21251BE1BB7900EFC9AA /* camera.png */,
+				A66D73D31BEE9ED20017A51F /* img01.JPG */,
+				A66D73D41BEE9ED20017A51F /* img02.JPG */,
+				A66D73D51BEE9ED20017A51F /* img03.JPG */,
+				A66D73D61BEE9ED20017A51F /* img04.JPG */,
+				A66D73D71BEE9ED20017A51F /* img05.JPG */,
+				A66D73D81BEE9ED20017A51F /* img06.JPG */,
+				A66D73D91BEE9ED20017A51F /* img07.JPG */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		A6E324D81BEE44CA00558A66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6A22B001BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.h */,
+				A6A22B011BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.m */,
+				A6A22B021BF4376F00E46A1B /* FuzzlePicObject.h */,
+				A6A22B031BF4376F00E46A1B /* FuzzlePicObject.m */,
+				A6A22AFB1BF436C000E46A1B /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A6E324D91BEE44D400558A66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6E324DC1BEE499900558A66 /* CustomViewObjects */,
+				A6E324DB1BEE496A00558A66 /* ViewControllers */,
+				A6E324C31BEAF6A600558A66 /* Images */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A6E324DA1BEE44E200558A66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6A22B061BF4385800E46A1B /* FuzzlePicObjectController.h */,
+				A6A22B071BF4385800E46A1B /* FuzzlePicObjectController.m */,
+				A6A22B091BF4390D00E46A1B /* Stack.h */,
+				A6A22B0A1BF4390D00E46A1B /* Stack.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A6E324DB1BEE496A00558A66 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A66D73CD1BEE60380017A51F /* Working */,
+				A66D73CE1BEE60510017A51F /* Completed */,
+				A6CE21221BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.h */,
+				A6CE21231BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A6E324DC1BEE499900558A66 /* CustomViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A6CE21131BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.h */,
+				A6CE21141BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.m */,
+				A66D73D01BEE60DC0017A51F /* SelectionButton.h */,
+				A66D73D11BEE60DC0017A51F /* SelectionButton.m */,
+			);
+			name = CustomViewObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +352,7 @@
 				TargetAttributes = {
 					A6CE20D91BE0A7BC00EFC9AA = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = XTWVPA2E6P;
 					};
 					A6CE20F21BE0A7BD00EFC9AA = {
 						CreatedOnToolsVersion = 7.1;
@@ -243,9 +389,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A66D73DC1BEE9ED20017A51F /* img03.JPG in Resources */,
+				A66D73DF1BEE9ED20017A51F /* img06.JPG in Resources */,
+				A66D73DD1BEE9ED20017A51F /* img04.JPG in Resources */,
 				A6CE20ED1BE0A7BC00EFC9AA /* LaunchScreen.storyboard in Resources */,
+				A66D73DA1BEE9ED20017A51F /* img01.JPG in Resources */,
 				A6CE20EA1BE0A7BC00EFC9AA /* Assets.xcassets in Resources */,
+				A66D73E01BEE9ED20017A51F /* img07.JPG in Resources */,
+				A6CE21261BE1BB7900EFC9AA /* camera.png in Resources */,
 				A6CE20E81BE0A7BC00EFC9AA /* Main.storyboard in Resources */,
+				A66D73DB1BEE9ED20017A51F /* img02.JPG in Resources */,
+				A66D73DE1BEE9ED20017A51F /* img05.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,8 +424,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6CE20E51BE0A7BC00EFC9AA /* ViewController.m in Sources */,
+				A6CE21151BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.m in Sources */,
+				A6CE21211BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.m in Sources */,
+				A6E324D71BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.m in Sources */,
+				A66D73D21BEE60DC0017A51F /* SelectionButton.m in Sources */,
+				A6A22B081BF4385800E46A1B /* FuzzlePicObjectController.m in Sources */,
+				A6CE21241BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.m in Sources */,
+				A6CE21121BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.m in Sources */,
+				A6E324D41BEB06DC00558A66 /* ViewCompletedFuzzleViewController.m in Sources */,
+				A6A22B0B1BF4390D00E46A1B /* Stack.m in Sources */,
 				A6CE20E21BE0A7BC00EFC9AA /* AppDelegate.m in Sources */,
+				A6A22B051BF4376F00E46A1B /* FuzzlePicObject.m in Sources */,
+				A6A22B041BF4376F00E46A1B /* FuzzlePicObject+CoreDataProperties.m in Sources */,
+				A6A22AFD1BF436C000E46A1B /* Model.xcdatamodeld in Sources */,
 				A6CE20DF1BE0A7BC00EFC9AA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,10 +578,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FuzzlePic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,10 +592,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FuzzlePic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -498,6 +669,7 @@
 				A6CE21091BE0A7BD00EFC9AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6CE210A1BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePicTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +678,7 @@
 				A6CE210C1BE0A7BD00EFC9AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6CE210D1BE0A7BD00EFC9AA /* Build configuration list for PBXNativeTarget "FuzzlePicUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,8 +687,22 @@
 				A6CE210F1BE0A7BD00EFC9AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A6A22AFB1BF436C000E46A1B /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A6A22AFC1BF436C000E46A1B /* Model.xcdatamodel */,
+			);
+			currentVersion = A6A22AFC1BF436C000E46A1B /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A6CE20D21BE0A7BC00EFC9AA /* Project object */;
 }
