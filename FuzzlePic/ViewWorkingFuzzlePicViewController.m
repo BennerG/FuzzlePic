@@ -224,6 +224,8 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
 
 // have touch functions defined here
 
+// I'm adding in some notes to see if .git picks it up
+
 
 
 

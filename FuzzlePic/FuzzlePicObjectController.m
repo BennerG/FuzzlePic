@@ -69,6 +69,7 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
 
 - (NSArray *)fetchObjects {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:FuzzlePicObjectName];
+    // i really hope i can get this running
 //    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES]]];
     NSArray *fetchedObjects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
     return fetchedObjects;
