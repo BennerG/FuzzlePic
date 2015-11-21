@@ -119,6 +119,14 @@
 }
 
 - (IBAction)saveButtonTapped:(id)sender {
+    self.fuzzlePicObject = [[FuzzlePicObjectController sharedInstance] createFuzzlePicObjectWithImagePath:[self saveFuzzlePicToImagePathString] currentState:[self createRandomOrderArrayWithFuzzleWidth]];
+    // reload tableView
+    [[NSNotificationCenter defaultCenter] postNotificationName:NewImageSaved object:nil];
+    // get rid of view controller so that user doesn't save same image to multiple locations
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSString *)saveFuzzlePicToImagePathString {
     // open up a path to documents
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPathString = [paths objectAtIndex:0];
@@ -131,14 +139,13 @@
     // append path to documents
     NSString *imageLocationPath = [fuzzlePicImageDirectoryPathString stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",imageString]];
     
-    
     // resize image (returns image *)
     UIImage *imageCopy = self.imageView.image;
     // final copy of image declared outside of scope
     UIImage *finalImage;
     
-//    // store aspect ratio width:height
-//    CGFloat aspectRatio = imageCopy.size.width / imageCopy.size.height;
+    //    // store aspect ratio width:height
+    //    CGFloat aspectRatio = imageCopy.size.width / imageCopy.size.height;
     
     // declare offset values
     CGFloat verticalOffsetFromOrigin = 0.0;
@@ -167,17 +174,12 @@
     
     // set image scale
     NSLog(@"%f", finalImage.scale);
-  
+    
     // save image at this location
     NSData *imageData = UIImagePNGRepresentation(finalImage);
     BOOL successfullyStored = [imageData writeToFile:imageLocationPath atomically:YES];
     NSLog(@"succesfullyStored:%d",successfullyStored);
-    
-    self.fuzzlePicObject = [[FuzzlePicObjectController sharedInstance] createFuzzlePicObjectWithImagePath:imageString currentState:[self createRandomOrderArrayWithFuzzleWidth]];
-    // reload tableView
-    [[NSNotificationCenter defaultCenter] postNotificationName:NewImageSaved object:nil];
-    // get rid of view controller so that user doesn't save same image to multiple locations
-    [self dismissViewControllerAnimated:YES completion:nil];
+    return imageLocationPath;
 }
 
 - (NSString *)createRandomOrderArrayWithFuzzleWidth {

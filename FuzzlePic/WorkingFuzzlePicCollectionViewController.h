@@ -11,6 +11,7 @@
 #import "FuzzlePicObjectController.h"
 
 static NSString * const NewImageSaved = @"newImageSaved";
+static NSString * const FuzzlePicImageWasDeleted = @"fuzzlePicImageWasDeleted";
 
 @interface WorkingFuzzlePicCollectionViewController : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 

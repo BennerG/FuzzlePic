@@ -30,8 +30,22 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
     // create new NSManagedObject instance
     FuzzlePicObject *fuzzlePic = [NSEntityDescription insertNewObjectForEntityForName:FuzzlePicObjectName inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     // set properties
-    fuzzlePic.image = imagePathID;
+    fuzzlePic.imageID = imagePathID;
     fuzzlePic.currentState = currentState;
+    // find the maximum in all of the current objects
+    NSArray *allFuzzlePicImages = [self fetchObjects];
+    NSInteger i = 0;
+    // instantiate an object from the bag of data then iterate through
+    // I'm not sure if this is 100% necessary bc I'm going to be adding an index for all new images
+    // I do have to at least call up the objects and then maybe call .lastChild and set my new index
+    // ESPECIALLY if I am sorting the actual fetch order
+    for (FuzzlePicObject *fuzzlePicObject in allFuzzlePicImages) {
+        if (i <= [fuzzlePicObject.imageIndex integerValue]) {
+            i = [fuzzlePicObject.imageIndex integerValue] + 1;
+        }
+    }
+    // set imageIndex
+    fuzzlePic.imageIndex = [NSNumber numberWithInteger:i];
     // store down small array to file
     [self saveToPersistentStorage];
     // return image
@@ -69,8 +83,8 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
 
 - (NSArray *)fetchObjects {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:FuzzlePicObjectName];
-    // i really hope i can get this running
-//    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"id" ascending:YES]]];
+    // i really hope i can get this running <- haha
+    [fetchRequest setSortDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"imageIndex" ascending:YES]]];
     NSArray *fetchedObjects = [[Stack sharedInstance].managedObjectContext executeFetchRequest:fetchRequest error:nil];
     return fetchedObjects;
 }

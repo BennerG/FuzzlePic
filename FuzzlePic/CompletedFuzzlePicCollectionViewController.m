@@ -25,8 +25,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//        self.completedImages = @[@"img01.JPG",@"img02.JPG",@"img03.JPG",@"img04.JPG",@"img05.JPG",@"img06.JPG"];
-    self.completedImages = [FuzzlePicObjectController sharedInstance].completedFuzzles;
+    self.completedImages = @[@"img01.JPG",@"img02.JPG",@"img03.JPG",@"img04.JPG",@"img05.JPG",@"img06.JPG"];
+//    self.completedImages = [FuzzlePicObjectController sharedInstance].completedFuzzles;
     
 }
 
