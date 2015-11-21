@@ -2,7 +2,7 @@
 //  FuzzlePicObject.h
 //  FuzzlePic
 //
-//  Created by Benjamin Thomas Gurrola on 11/11/15.
+//  Created by Benjamin Thomas Gurrola on 11/21/15.
 //  Copyright © 2015 Benjamin Thomas Gurrola. All rights reserved.
 //
 

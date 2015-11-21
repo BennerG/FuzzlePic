@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5008C597FF2C21CACF18FAA815E96B28B06D236F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5008C597FF2C21CACF18FAA815E96B28B06D236F" : 0,
+    "D0935097B0F2399C6AC7D0C1316ED34E9B347F4C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C1C8A166-23EB-40B5-84FE-EFF8AECCCC40",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5008C597FF2C21CACF18FAA815E96B28B06D236F" : "FuzzlePic\/",
+    "D0935097B0F2399C6AC7D0C1316ED34E9B347F4C" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FuzzlePic",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FuzzlePic.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bennerg2\/FuzzlePic.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5008C597FF2C21CACF18FAA815E96B28B06D236F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bennerg2\/DevMountain.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D0935097B0F2399C6AC7D0C1316ED34E9B347F4C"
+    }
+  ]
+}

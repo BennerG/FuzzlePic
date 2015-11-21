@@ -40,7 +40,7 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
     
     // I need to reframe the actual picture to look like the thumbnail
     
-    NSMutableArray <NSString *> *imageArray  = [NSMutableArray new];
+//    NSMutableArray <NSString *> *imageArray  = [NSMutableArray new];
     
     NSMutableArray <UIImage *> *realImageArray = [NSMutableArray new];
     
@@ -69,14 +69,14 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
             CGPoint currentCenter = CGPointMake(xCenter, yCenter);
             [imageViewCentersArray addObject:[NSValue valueWithCGPoint:currentCenter]];
             
-            NSString *imageInit = @"image";
-            NSString *imageString = [imageInit stringByAppendingString:[NSString stringWithFormat:@"%d%d.jpg",i,j]];
+//            NSString *imageInit = @"image";
+//            NSString *imageString = [imageInit stringByAppendingString:[NSString stringWithFormat:@"%d%d.jpg",i,j]];
             
             UIImage *img = [self makeImageClipFrom:self.workingImage xPosition:(i * singleSquareWidth) yPosition:(j * singleSquareWidth) width:singleSquareWidth height: singleSquareWidth];
-            [imageArray addObject:imageString];
+//            [imageArray addObject:imageString];
             [realImageArray addObject:img];
             
-            [self.currentState setObject:img forKey:imageString];
+//            [self.currentState setObject:img forKey:imageString];
             
             squareImageView.center = currentCenter;
             squareImageView.image = img;
@@ -107,13 +107,14 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
     
     
     
-    //[self randomizeImages];
+    [self randomizeImages];
     
     
     
     // } else {
     // self loadImageLocations from model
     // }
+    
     
     // register the touches
     
@@ -156,7 +157,7 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
 - (IBAction)deleteFuzzlePic:(id)sender {
     
     // delete image from NSFileManager
-    NSString *imageString = self.fuzzlePicObject.image;
+    NSString *imageString = self.fuzzlePicObject.imageID;
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPathString = [paths objectAtIndex:0];

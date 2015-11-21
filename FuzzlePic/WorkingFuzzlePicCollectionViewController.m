@@ -27,12 +27,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     // add observer for NSNotification Image Saved
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadImages) name:NewImageSaved object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadImages) name:@"fuzzlePicImageWasDeleted" object:nil];
-
-    // load up some fake images so I can see the collectionView
-//    self.workingImages = @[@"img01.JPG",@"img02.JPG",@"img03.JPG",@"img04.JPG",@"img05.JPG",@"img06.JPG",@"img07.JPG"];
-    
-
+    // add observer for NSNotification Image Deleted
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadImages) name:FuzzlePicImageWasDeleted object:nil];
 }
 
 // method to be triggered on observation
@@ -40,7 +36,7 @@ static NSString * const reuseIdentifier = @"Cell";
     NSMutableArray *tempImages = [NSMutableArray new];
     
     for (FuzzlePicObject *fuzzlePic in [FuzzlePicObjectController sharedInstance].workingFuzzles) {
-        NSString *imageString = fuzzlePic.image;
+        NSString *imageString = fuzzlePic.imageID;
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectoryPathString = [paths objectAtIndex:0];
