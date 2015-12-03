@@ -17,11 +17,7 @@
 - (BOOL)isOrdered:(NSString *)currentState {
     NSMutableArray  *numberReferences = [NSMutableArray new];
     // for each number in String.
-    for (int i = 0; i < currentState.length; i++) {
-        NSString *locationReference = [currentState substringWithRange:NSMakeRange(i,1)];
-        NSNumber *numRef = [NSNumber numberWithInt:(int)[locationReference integerValue]];
-        [numberReferences addObject:numRef];
-    }
+    numberReferences = [[currentState componentsSeparatedByString:@","] mutableCopy];
     // test if the array is ordered
     for (int j = 0; j < numberReferences.count; j++) {
         if (numberReferences[j] > numberReferences[j + 1]) return NO;

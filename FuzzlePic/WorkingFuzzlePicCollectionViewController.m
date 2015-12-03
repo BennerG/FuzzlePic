@@ -50,7 +50,6 @@ static NSString * const reuseIdentifier = @"Cell";
     self.workingImages = tempImages;
     
     [self.collectionView reloadData];
-    NSLog(@"pause");
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -88,7 +87,7 @@ static NSString * const reuseIdentifier = @"Cell";
              // set a property rather than the view that hasn't loaded yet.
              viewController.workingImage = [self.workingImages objectAtIndex:indexPath.row];
              viewController.fuzzlePicObject = [[FuzzlePicObjectController sharedInstance].workingFuzzles objectAtIndex:indexPath.row];
-             NSLog(@"Pause");
+             viewController.fuzzleWidth = [viewController.fuzzlePicObject.fuzzleWidth integerValue];
          }
      }
  }

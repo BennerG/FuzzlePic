@@ -10,140 +10,49 @@
 
 @interface ViewWorkingFuzzlePicViewController ()
 
-@property (strong,nonatomic) NSMutableDictionary *currentState;
+@property (strong,nonatomic) NSMutableArray *currentState;
 
 @end
 
 @implementation ViewWorkingFuzzlePicViewController
 
-int mainRemovedImageIndex = 8;
-
-NSMutableArray <UIImageView *> *imageViewArray;
+NSMutableArray <UIView *> *imageViewArray;
+const NSArray <UIView *> *constImageViewArray;
 NSMutableArray *imageViewCentersArray;
 UIImageView *savedImageView;
 CGPoint emptySpot, tapCenter, left, right, top, bottom;
 bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
+NSInteger emptySquare;
+CGFloat singleSquareWidth;
+NSInteger removedImageViewIndex;
+UIView *imagesView;
+UIImageView *squareImageView;
+NSMutableArray *imageLocationIntegerValue;
+NSNumber *emptyValue;
+NSInteger emptyValueLocation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.currentState = [NSMutableDictionary new];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFuzzlePicView:) name:FuzzleTileWasMoved object:nil];
+//    
     
-    CGFloat fuzzleWidth = 3.0;
     
-    CGFloat singleSquareWidth = self.fuzzlePicImageView.frame.size.width / fuzzleWidth;
-    self.fuzzlePicImageView.backgroundColor = [UIColor lightGrayColor];
-    
-//  Do any additional setup after loading the view.
-    
-//    self.fuzzlePicImageView.image = self.workingImage;
-    
-    // I need to reframe the actual picture to look like the thumbnail
-    
-//    NSMutableArray <NSString *> *imageArray  = [NSMutableArray new];
-    
-    NSMutableArray <UIImage *> *realImageArray = [NSMutableArray new];
-    
-    imageViewArray = [NSMutableArray new];
-    imageViewCentersArray = [NSMutableArray new];
-    
+    [self loadFuzzlePicView];
 
-    
-    UIView *imagesView = [[UIView alloc] initWithFrame:CGRectMake(7.0, 154.0, 360.0, 360.0)];
-    [self.view addSubview:imagesView];
-    
-    CGFloat xCenter = 60.0;
-    CGFloat yCenter = 60.0;
-    
-    int removedImageViewIndex = (int)(pow(fuzzleWidth,2) - 1);
-    
-
-    
-    // take the picture, split it up into separate squares and recreate the square.
-    
-    for (int i = 0; i < (int)fuzzleWidth; i++) {
-        for (int j = 0; j < (int)fuzzleWidth; j++) {
-            
-            UIImageView *squareImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 120.0, 120.0)];
-            
-            CGPoint currentCenter = CGPointMake(xCenter, yCenter);
-            [imageViewCentersArray addObject:[NSValue valueWithCGPoint:currentCenter]];
-            
-//            NSString *imageInit = @"image";
-//            NSString *imageString = [imageInit stringByAppendingString:[NSString stringWithFormat:@"%d%d.jpg",i,j]];
-            
-            UIImage *img = [self makeImageClipFrom:self.workingImage xPosition:(i * singleSquareWidth) yPosition:(j * singleSquareWidth) width:singleSquareWidth height: singleSquareWidth];
-//            [imageArray addObject:imageString];
-            [realImageArray addObject:img];
-            
-//            [self.currentState setObject:img forKey:imageString];
-            
-            squareImageView.center = currentCenter;
-            squareImageView.image = img;
-            squareImageView.userInteractionEnabled = YES;
-            [imageViewArray addObject:squareImageView];
-            [imagesView addSubview:squareImageView];
-            yCenter += 120.0;
-        }
-        xCenter += 120.0;
-        yCenter = 60.0;
-    }
-    
-    savedImageView = [imageViewArray objectAtIndex:removedImageViewIndex];
-    
-    [[imageViewArray objectAtIndex:removedImageViewIndex] removeFromSuperview];
-    [imageViewArray removeObjectAtIndex:removedImageViewIndex];
-    
-    
-    
-//    self.fuzzlePicImageView.animationImages = realImageArray;
-//    self.fuzzlePicImageView.animationDuration = 10;
-//    [self.fuzzlePicImageView startAnimating];
-    
-    
-    // ranomize picture (set it equal to ranomized order in the model)
-    
-    // if (image is new) {
-    
-    
-    
     [self randomizeImages];
     
-    
-    
-    // } else {
-    // self loadImageLocations from model
-    // }
-    
-    
     // register the touches
-    
     // The only reason why we need this 'cursor' is to explicitly specify which square's center we're setting
     int cursor = 0;
-    for (UIImageView *aSquareImageView in imageViewArray) {
+    for (UIImageView *aSquareImageView in constImageViewArray) {
         // tap
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleFuzzleGuesture:)];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(updateFuzzlePicView:)];
         [singleTap setNumberOfTapsRequired:1];
         [aSquareImageView addGestureRecognizer:singleTap];
-        // swipe right
-        UISwipeGestureRecognizer *swipeRightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleFuzzleGuesture:)];
-        [swipeRightRecognizer setDirection:UISwipeGestureRecognizerDirectionRight];
-        // swipe left
-        UISwipeGestureRecognizer *swipeLeftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleFuzzleGuesture:)];
-        [swipeLeftRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft];
-        // swipe up
-        UISwipeGestureRecognizer *swipeUpRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleFuzzleGuesture:)];
-        [swipeUpRecognizer setDirection:UISwipeGestureRecognizerDirectionUp];
-        // swipe down
-        UISwipeGestureRecognizer *swipeDownRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleFuzzleGuesture:)];
-        [swipeDownRecognizer setDirection:UISwipeGestureRecognizerDirectionDown];
-        // set the image view center
-        aSquareImageView.center = [imageViewArray objectAtIndex:cursor].center;
+        aSquareImageView.center = [constImageViewArray objectAtIndex:cursor].center;
         cursor++;
     }
-    
-    // after each touch, send a messae to the controller to update the model
-
 }
 
 - (UIImage *)makeImageClipFrom:(UIImage *)image xPosition:(CGFloat)xPosition yPosition:(CGFloat)yPosition width:(CGFloat)width height:(CGFloat)height {
@@ -155,18 +64,7 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
 }
 
 - (IBAction)deleteFuzzlePic:(id)sender {
-    
-    // delete image from NSFileManager
-    NSString *imageString = self.fuzzlePicObject.imageID;
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectoryPathString = [paths objectAtIndex:0];
-    NSString *fuzzlePicImageDirectoryPathString = [documentsDirectoryPathString stringByAppendingPathComponent:@"/FuzzlePicImages/"];
-    NSString *imageLocationPath = [fuzzlePicImageDirectoryPathString stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",imageString]];
-    // deleted
-    BOOL imageDeleted = [[NSFileManager defaultManager] removeItemAtPath:imageLocationPath error:nil];
-    NSLog(@"imageDeleted=%d",imageDeleted);
-    // delete coreData object
+    // delete coreData object and image stored in its path
     [[FuzzlePicObjectController sharedInstance] removeFuzzlePicObject:self.fuzzlePicObject];
     // send NSNotification that image was removed
     [[NSNotificationCenter defaultCenter] postNotificationName:@"fuzzlePicImageWasDeleted" object:nil];
@@ -180,50 +78,193 @@ bool leftIsEmpty, rightIsEmpty, topIsEmpty, bottomIsEmpty;
 }
 
 - (void)randomizeImages {
-    NSMutableArray *centersCopy = [imageViewCentersArray mutableCopy];
+    removedImageViewIndex = (NSInteger)(pow([self.fuzzlePicObject.fuzzleWidth doubleValue],2) - 1);
     
-    int randomInt;
+    NSArray *randomIntArray = [self stringToIntegerArray:self.fuzzlePicObject.currentState];
     CGPoint randomLocation;
     
-    for (UIView *eachView in imageViewArray) {
-        randomInt = arc4random() % centersCopy.count;
-        randomLocation = [[centersCopy objectAtIndex:randomInt] CGPointValue];
+    NSMutableArray *tempImageViews = [constImageViewArray mutableCopy];
+    NSMutableArray *finalTempImageViews = [NSMutableArray new];
+    
+    NSArray *tempImageViewCenters = [NSArray arrayWithArray:imageViewCentersArray];
+    
+    for (int i = 0; i <= removedImageViewIndex; i++) {
+    
+        NSInteger cursor = [randomIntArray[i] integerValue];
+        
+        UIView *eachView = [tempImageViews objectAtIndex:i];
+        
+        randomLocation = [[tempImageViewCenters objectAtIndex:cursor] CGPointValue];
+        
+        NSNumber *intAsNumber = [[NSNumber alloc] initWithInteger:cursor];
+        imageLocationIntegerValue[i] = intAsNumber;
         
         eachView.center = randomLocation;
-        [centersCopy removeObjectAtIndex:randomInt];
+        [finalTempImageViews addObject:eachView];
     }
-    emptySpot = [[centersCopy objectAtIndex:0] CGPointValue];
+    
+    for (UIView *eachView in tempImageViews) {
+        [imagesView addSubview:eachView];
+    }
+    
+    emptyValue = [[NSNumber alloc] initWithInteger:removedImageViewIndex];
+    emptyValueLocation = [imageLocationIntegerValue indexOfObject:emptyValue];
+    savedImageView = [finalTempImageViews objectAtIndex:emptyValueLocation];
+    emptySpot = savedImageView.center;
+    [savedImageView removeFromSuperview];
 }
 
-- (void)handleFuzzleGuesture:(UIGestureRecognizer *)sender {
-    tapCenter = sender.view.center;
-    left = CGPointMake(tapCenter.x - 120.0, tapCenter.y);
-    right = CGPointMake(tapCenter.x + 120.0, tapCenter.y);
-    top = CGPointMake(tapCenter.x, tapCenter.y + 120.0);
-    bottom = CGPointMake(tapCenter.x, tapCenter.y - 120.0);
+// this method calls the updateFuzzlePicView to draw the pic, but then saves the last image
+// I need to have 2 separate functions... one to create the fuzzlePic, and one to
+
+- (void)loadFuzzlePicView {
+    imageViewArray = [NSMutableArray new];
+    imageViewCentersArray = [NSMutableArray new];
     
-    if ([[NSValue valueWithCGPoint:left] isEqual:[NSValue valueWithCGPoint:emptySpot]]) leftIsEmpty = true;
-    if ([[NSValue valueWithCGPoint:right] isEqual:[NSValue valueWithCGPoint:emptySpot]]) rightIsEmpty = true;
-    if ([[NSValue valueWithCGPoint:top] isEqual:[NSValue valueWithCGPoint:emptySpot]]) topIsEmpty = true;
-    if ([[NSValue valueWithCGPoint:bottom] isEqual:[NSValue valueWithCGPoint:emptySpot]]) bottomIsEmpty = true;
+    singleSquareWidth = self.fuzzlePicImageView.frame.size.width / self.fuzzleWidth;
+    self.fuzzlePicImageView.backgroundColor = [UIColor lightGrayColor];
+    
+    imagesView = [[UIView alloc] initWithFrame:CGRectMake(7.0, 154.0, 360.0, 360.0)];
+    [self.view addSubview:imagesView];
+    
+    // create an array of images from picture
+    NSMutableArray <UIImage *> *realImageArray = [NSMutableArray new];
+    
+    CGFloat xCenter = singleSquareWidth / 2;
+    CGFloat yCenter = singleSquareWidth / 2;
+    
+    for (int i = 0; i < self.fuzzleWidth; i++) {
+        for (int j = 0; j < self.fuzzleWidth; j++) {
+            
+            squareImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, singleSquareWidth, singleSquareWidth)];
+            
+            CGPoint currentCenter = CGPointMake(xCenter, yCenter); // just switched these
+            [imageViewCentersArray addObject:[NSValue valueWithCGPoint:currentCenter]];
+    
+            UIImage *img = [self makeImageClipFrom:self.workingImage xPosition:(j * singleSquareWidth) yPosition:(i * singleSquareWidth) width:singleSquareWidth height: singleSquareWidth];
+            
+            [realImageArray addObject:img];
+            squareImageView.center = currentCenter;
+            squareImageView.image = img;
+            squareImageView.userInteractionEnabled = YES;
+            [imageViewArray addObject:squareImageView];
+            xCenter += singleSquareWidth;
+        }
+        yCenter += singleSquareWidth;
+        xCenter = singleSquareWidth / 2;
+    }
+    constImageViewArray = [NSArray arrayWithArray:imageViewArray];
+    
+    NSInteger fuzWidthLength = pow((double)self.fuzzleWidth, 2.0);
+    imageLocationIntegerValue = [NSMutableArray new];
+    for (NSInteger k = 0; k < fuzWidthLength; k++) {
+        NSNumber *currentNumber = [[NSNumber alloc] initWithInteger:k];
+        [imageLocationIntegerValue addObject:currentNumber];
+    }
+}
+
+- (NSMutableArray *)stringToIntegerArray:(NSString *)string {
+    // take fuzzlePicObject.currentState and create a mutable array
+    NSMutableArray  *numberReferences = [NSMutableArray new];
+    numberReferences = [[string componentsSeparatedByString:@","] mutableCopy];
+    return numberReferences;
+}
+
+- (NSString *)arrayToString:(NSArray *)array {
+    return [array componentsJoinedByString:@","];
+}
+
+- (void)updateFuzzlePicView:(UIGestureRecognizer *)sender {
+    tapCenter = sender.view.center;
+    left = CGPointMake(tapCenter.x - singleSquareWidth, tapCenter.y);
+    right = CGPointMake(tapCenter.x + singleSquareWidth, tapCenter.y);
+    top = CGPointMake(tapCenter.x, tapCenter.y - singleSquareWidth);
+    bottom = CGPointMake(tapCenter.x, tapCenter.y + singleSquareWidth);
+    
+    if ([[NSValue valueWithCGPoint:left] isEqual:[NSValue valueWithCGPoint:emptySpot]]) {
+        leftIsEmpty = true;
+        emptySquare = leftSquareIsEmpty;
+    }
+    if ([[NSValue valueWithCGPoint:right] isEqual:[NSValue valueWithCGPoint:emptySpot]]) {
+        rightIsEmpty = true;
+        emptySquare = rightSquareIsEmpty;
+    }
+    if ([[NSValue valueWithCGPoint:top] isEqual:[NSValue valueWithCGPoint:emptySpot]]) {
+        topIsEmpty = true;
+        emptySquare = topSquareIsEmpty;
+    }
+    if ([[NSValue valueWithCGPoint:bottom] isEqual:[NSValue valueWithCGPoint:emptySpot]]) {
+        bottomIsEmpty = true;
+        emptySquare = bottomSquareIsEmpty;
+    }
+
     
     if (leftIsEmpty || rightIsEmpty || topIsEmpty || bottomIsEmpty) {
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.5];
         sender.view.center = emptySpot;
+        // at the sma time I need to update the imageLocationIntegerValue
         [UIView commitAnimations];
+        
+//        NSMutableArray *currentStateArray = [self stringToIntegerArray:self.fuzzlePicObject.currentState];
+        NSInteger emptyIndex = ([imageLocationIntegerValue indexOfObject:emptyValue] == 0) ? 0 : [imageLocationIntegerValue indexOfObject:emptyValue];
+        
+        // @"5,1,8,
+        //   2,4,7,
+        //   0,6,3"
+        
+        // + 1 || - 1 || + (fuzzleWidth) || - (fuzzleWidth);
+        
+        switch (emptySquare) {
+            case leftSquareIsEmpty:
+                // swap values in currentState array
+                [imageLocationIntegerValue exchangeObjectAtIndex:emptyIndex withObjectAtIndex:emptyIndex + 1];
+                break;
+            case rightSquareIsEmpty:
+                // swap values in currentState array
+                [imageLocationIntegerValue exchangeObjectAtIndex:emptyIndex withObjectAtIndex:emptyIndex - 1];
+                break;
+            case topSquareIsEmpty:
+                // swap values in currentState array
+                [imageLocationIntegerValue exchangeObjectAtIndex:emptyIndex withObjectAtIndex:emptyIndex - (self.fuzzleWidth)];
+                break;
+            case bottomSquareIsEmpty:
+                // swap values in currentState array
+                [imageLocationIntegerValue exchangeObjectAtIndex:emptyIndex withObjectAtIndex:emptyIndex + (self.fuzzleWidth)];
+                break;
+            default: // do nothing
+                break;
+        }
+        
+        NSString *currentStateString = [imageLocationIntegerValue componentsJoinedByString:@","];
+        self.fuzzlePicObject.currentState = currentStateString;
+        [[FuzzlePicObjectController sharedInstance] saveToPersistentStorage];
+        
         emptySpot = tapCenter;
         leftIsEmpty = false; rightIsEmpty = false; topIsEmpty = false; bottomIsEmpty = false;
     }
+    
+//    // my update function needs to:
+//    // 1. take self.fuzzlePicObject.currentState convert it to an array
+//    
+//    // 2. read the current state of the objects from the view and compare their state to eachother
+//    if ([imageLocationIntegerValue isEqualToArray:currentStateArray]) {
+//        return; // do nothing and exit the method
+//    } else {
+//        
+//        
+//        
+//    }
+//    //   convert the view objects array order back to a string
+//    //   self.fuzzlePicObject.currentState = view objects array order string;
+//    //   [FuzzlePicObjectController sharedInstance] saveToPersistantStorage]; // make sure this works
+//    // }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-// have touch functions defined here
 
 
 /*

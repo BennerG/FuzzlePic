@@ -26,7 +26,7 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
 
 #pragma mark - Create
 
-- (FuzzlePicObject *)createFuzzlePicObjectWithImagePath:(NSString *)imagePathID currentState:(NSString *)currentState {
+- (FuzzlePicObject *)createFuzzlePicObjectWithImagePath:(NSString *)imagePathID currentState:(NSString *)currentState fuzzleWidth:(NSInteger)fuzzleWidth {
     // create new NSManagedObject instance
     FuzzlePicObject *fuzzlePic = [NSEntityDescription insertNewObjectForEntityForName:FuzzlePicObjectName inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     // set properties
@@ -34,18 +34,17 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
     fuzzlePic.currentState = currentState;
     // find the maximum in all of the current objects
     NSArray *allFuzzlePicImages = [self fetchObjects];
-    NSInteger i = 0;
-    // instantiate an object from the bag of data then iterate through
-    // I'm not sure if this is 100% necessary bc I'm going to be adding an index for all new images
-    // I do have to at least call up the objects and then maybe call .lastChild and set my new index
-    // ESPECIALLY if I am sorting the actual fetch order
-    for (FuzzlePicObject *fuzzlePicObject in allFuzzlePicImages) {
-        if (i <= [fuzzlePicObject.imageIndex integerValue]) {
-            i = [fuzzlePicObject.imageIndex integerValue] + 1;
-        }
-    }
-    // set imageIndex
-    fuzzlePic.imageIndex = [NSNumber numberWithInteger:i];
+//    NSInteger i = 0;
+    // instantiate an object from the bag of data
+    fuzzlePic.imageIndex = [NSNumber numberWithInteger:[allFuzzlePicImages indexOfObject:allFuzzlePicImages.lastObject] + 1];
+//    for (FuzzlePicObject *fuzzlePicObject in allFuzzlePicImages) {
+//        if (i <= [fuzzlePicObject.imageIndex integerValue]) {
+//            i = [fuzzlePicObject.imageIndex integerValue] + 1;
+//        }
+//    }
+//    // set imageIndex
+//    fuzzlePic.imageIndex = [NSNumber numberWithInteger:i];
+    fuzzlePic.fuzzleWidth = [NSNumber numberWithInteger:fuzzleWidth];
     // store down small array to file
     [self saveToPersistentStorage];
     // return image
@@ -100,8 +99,16 @@ static NSString *const FuzzlePicObjectName = @"FuzzlePicObject";
 #pragma mark - Delete
 
 - (void)removeFuzzlePicObject:(FuzzlePicObject *)fuzzlePic {
-    
     // NSFileManager to delete FuzzlePicImage at path
+    NSString *imageString = fuzzlePic.imageID;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectoryPathString = [paths objectAtIndex:0];
+    NSString *fuzzlePicImageDirectoryPathString = [documentsDirectoryPathString stringByAppendingPathComponent:@"/FuzzlePicImages/"];
+    NSString *imageLocationPath = [fuzzlePicImageDirectoryPathString stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",imageString]];
+    // deleted
+    BOOL imageDeleted = [[NSFileManager defaultManager] removeItemAtPath:imageLocationPath error:nil];
+    NSLog(@"imageDeleted=%d",imageDeleted);
     
     [[Stack sharedInstance].managedObjectContext deleteObject:fuzzlePic];
 }

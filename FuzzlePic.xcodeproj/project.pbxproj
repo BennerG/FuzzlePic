@@ -15,8 +15,8 @@
 		A66D73DE1BEE9ED20017A51F /* img05.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D71BEE9ED20017A51F /* img05.JPG */; };
 		A66D73DF1BEE9ED20017A51F /* img06.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D81BEE9ED20017A51F /* img06.JPG */; };
 		A66D73E01BEE9ED20017A51F /* img07.JPG in Resources */ = {isa = PBXBuildFile; fileRef = A66D73D91BEE9ED20017A51F /* img07.JPG */; };
-		A68617D51C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A68617D21C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.m */; };
-		A68617D61C00B01E00257217 /* FuzzlePicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A68617D41C00B01E00257217 /* FuzzlePicObject.m */; };
+		A68617DB1C010C3400257217 /* FuzzlePicObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A68617D81C010C3400257217 /* FuzzlePicObject+CoreDataProperties.m */; };
+		A68617DC1C010C3400257217 /* FuzzlePicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A68617DA1C010C3400257217 /* FuzzlePicObject.m */; };
 		A6A22AFD1BF436C000E46A1B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6A22AFB1BF436C000E46A1B /* Model.xcdatamodeld */; };
 		A6A22AFF1BF4374700E46A1B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A22AFE1BF4374700E46A1B /* CoreData.framework */; };
 		A6A22B081BF4385800E46A1B /* FuzzlePicObjectController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A22B071BF4385800E46A1B /* FuzzlePicObjectController.m */; };
@@ -64,10 +64,10 @@
 		A66D73D71BEE9ED20017A51F /* img05.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img05.JPG; sourceTree = "<group>"; };
 		A66D73D81BEE9ED20017A51F /* img06.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img06.JPG; sourceTree = "<group>"; };
 		A66D73D91BEE9ED20017A51F /* img07.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img07.JPG; sourceTree = "<group>"; };
-		A68617D11C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuzzlePicObject+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
-		A68617D21C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FuzzlePicObject+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
-		A68617D31C00B01E00257217 /* FuzzlePicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzlePicObject.h; sourceTree = SOURCE_ROOT; };
-		A68617D41C00B01E00257217 /* FuzzlePicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicObject.m; sourceTree = SOURCE_ROOT; };
+		A68617D71C010C3400257217 /* FuzzlePicObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuzzlePicObject+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		A68617D81C010C3400257217 /* FuzzlePicObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FuzzlePicObject+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		A68617D91C010C3400257217 /* FuzzlePicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzlePicObject.h; sourceTree = SOURCE_ROOT; };
+		A68617DA1C010C3400257217 /* FuzzlePicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuzzlePicObject.m; sourceTree = SOURCE_ROOT; };
 		A6A22AFC1BF436C000E46A1B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		A6A22AFE1BF4374700E46A1B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A6A22B061BF4385800E46A1B /* FuzzlePicObjectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuzzlePicObjectController.h; sourceTree = "<group>"; };
@@ -233,10 +233,10 @@
 		A6E324D81BEE44CA00558A66 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A68617D11C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.h */,
-				A68617D21C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.m */,
-				A68617D31C00B01E00257217 /* FuzzlePicObject.h */,
-				A68617D41C00B01E00257217 /* FuzzlePicObject.m */,
+				A68617D71C010C3400257217 /* FuzzlePicObject+CoreDataProperties.h */,
+				A68617D81C010C3400257217 /* FuzzlePicObject+CoreDataProperties.m */,
+				A68617D91C010C3400257217 /* FuzzlePicObject.h */,
+				A68617DA1C010C3400257217 /* FuzzlePicObject.m */,
 				A6A22AFB1BF436C000E46A1B /* Model.xcdatamodeld */,
 			);
 			name = Model;
@@ -427,13 +427,13 @@
 				A6CE21151BE0E84800EFC9AA /* FuzzlePicCollectionViewCell.m in Sources */,
 				A6CE21211BE1AF0300EFC9AA /* CompletedFuzzlePicCollectionViewController.m in Sources */,
 				A6E324D71BEC48C700558A66 /* ViewWorkingFuzzlePicViewController.m in Sources */,
-				A68617D51C00B01E00257217 /* FuzzlePicObject+CoreDataProperties.m in Sources */,
+				A68617DB1C010C3400257217 /* FuzzlePicObject+CoreDataProperties.m in Sources */,
 				A66D73D21BEE60DC0017A51F /* SelectionButton.m in Sources */,
 				A6A22B081BF4385800E46A1B /* FuzzlePicObjectController.m in Sources */,
 				A6CE21241BE1BAE600EFC9AA /* CreateNewFuzzlePicViewController.m in Sources */,
 				A6CE21121BE0E81300EFC9AA /* WorkingFuzzlePicCollectionViewController.m in Sources */,
 				A6E324D41BEB06DC00558A66 /* ViewCompletedFuzzleViewController.m in Sources */,
-				A68617D61C00B01E00257217 /* FuzzlePicObject.m in Sources */,
+				A68617DC1C010C3400257217 /* FuzzlePicObject.m in Sources */,
 				A6A22B0B1BF4390D00E46A1B /* Stack.m in Sources */,
 				A6CE20E21BE0A7BC00EFC9AA /* AppDelegate.m in Sources */,
 				A6A22AFD1BF436C000E46A1B /* Model.xcdatamodeld in Sources */,
@@ -629,6 +629,8 @@
 		A6CE210E1BE0A7BD00EFC9AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Ben Gurrola";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FuzzlePicUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePicUITests;
@@ -641,6 +643,8 @@
 		A6CE210F1BE0A7BD00EFC9AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Ben Gurrola";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FuzzlePicUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.practice.FuzzlePicUITests;

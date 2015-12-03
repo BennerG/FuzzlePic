@@ -27,10 +27,10 @@
     // Do any additional setup after loading the view.
     
     self.fuzzleSizeSelectorArray = [[NSArray alloc]initWithObjects:[NSNumber numberWithInt:3],[NSNumber numberWithInt:4],[NSNumber numberWithInt:5], nil];
+    // defualt selection
     [self.fuzzleSizeSelector selectedRowInComponent:0];
-    NSInteger defaultFuzzleWidth = 3;
-    self.fuzzleWidth = [NSNumber numberWithInteger:defaultFuzzleWidth];
-    
+    // default fuzzleWidth
+    self.fuzzleWidth = 3;
     
     [self.imageView setUserInteractionEnabled:YES];
     
@@ -54,7 +54,6 @@
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
-    
     UILabel *pickerViewRowTitle = (UILabel *)view;
     pickerViewRowTitle = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, [pickerView rowSizeForComponent:component].width, [pickerView rowSizeForComponent:component].height)];
     pickerViewRowTitle.font = [UIFont fontWithName:@"AvenirNext-Bold" size:36.0];
@@ -65,8 +64,9 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.fuzzleWidth = [self.fuzzleSizeSelectorArray objectAtIndex:row];
+    self.fuzzleWidth = [[self.fuzzleSizeSelectorArray objectAtIndex:row] integerValue];
     [self triggerSliceView];
+    NSLog(@"Pause");
 }
 
 - (void)triggerSliceView {
@@ -79,12 +79,11 @@
         
         self.verticalViews = [NSMutableArray new];
         self.horizontalViews = [NSMutableArray new];
-        self.widthNum = [self.fuzzleWidth integerValue];
-        for (int i = 0; i < self.widthNum; i++) {
+        for (int i = 0; i < self.fuzzleWidth; i++) {
             if (i > 0) {
-                UIView *verticalLineView = [[UIView alloc] initWithFrame:CGRectMake(i * (360.0/self.widthNum), 0.0, 1.5, 360.0)];
+                UIView *verticalLineView = [[UIView alloc] initWithFrame:CGRectMake(i * (360.0/self.fuzzleWidth), 0.0, 1.5, 360.0)];
                 verticalLineView.backgroundColor = [UIColor colorWithRed:(57.0/255.0) green:(255.0/255.0) blue:(20.0/255.0) alpha:1.0];
-                UIView *horizontalLineView = [[UIView alloc] initWithFrame:CGRectMake(0.0, i * (360.0/self.widthNum), 360.0, 1.5)];
+                UIView *horizontalLineView = [[UIView alloc] initWithFrame:CGRectMake(0.0, i * (360.0/self.fuzzleWidth), 360.0, 1.5)];
                 horizontalLineView.backgroundColor = [UIColor colorWithRed:(57.0/255.0) green:(255.0/255.0) blue:(20.0/255.0) alpha:1.0];
                 
                 [self.verticalViews addObject:verticalLineView];
@@ -96,14 +95,14 @@
         }
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:1.0 delay:0.35 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            for (int j = 0; j < self.widthNum - 1; j++) {
+            for (int j = 0; j < self.fuzzleWidth - 1; j++) {
                 UIView *vertView = (UIView *)[self.verticalViews objectAtIndex:j];
                 vertView.alpha = 0.0;
                 UIView *horizView = (UIView *)[self.horizontalViews objectAtIndex:j];
                 horizView.alpha = 0.0;
             }
         } completion:^(BOOL finished){
-            for (int j = 0; j < self.widthNum - 1; j++) {
+            for (int j = 0; j < self.fuzzleWidth - 1; j++) {
                 [[self.verticalViews objectAtIndex:j] removeFromSuperview];
                 [[self.horizontalViews objectAtIndex:j] removeFromSuperview];
             }
@@ -119,7 +118,7 @@
 }
 
 - (IBAction)saveButtonTapped:(id)sender {
-    self.fuzzlePicObject = [[FuzzlePicObjectController sharedInstance] createFuzzlePicObjectWithImagePath:[self saveFuzzlePicToImagePathString] currentState:[self createRandomOrderArrayWithFuzzleWidth]];
+    self.fuzzlePicObject = [[FuzzlePicObjectController sharedInstance] createFuzzlePicObjectWithImagePath:[self saveFuzzlePicToImagePathString] currentState:[self createRandomOrderArrayWithFuzzleWidth] fuzzleWidth:self.fuzzleWidth];
     // reload tableView
     [[NSNotificationCenter defaultCenter] postNotificationName:NewImageSaved object:nil];
     // get rid of view controller so that user doesn't save same image to multiple locations
@@ -143,9 +142,6 @@
     UIImage *imageCopy = self.imageView.image;
     // final copy of image declared outside of scope
     UIImage *finalImage;
-    
-    //    // store aspect ratio width:height
-    //    CGFloat aspectRatio = imageCopy.size.width / imageCopy.size.height;
     
     // declare offset values
     CGFloat verticalOffsetFromOrigin = 0.0;
@@ -172,18 +168,18 @@
     finalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    // set image scale
+    // image scale
     NSLog(@"%f", finalImage.scale);
     
     // save image at this location
     NSData *imageData = UIImagePNGRepresentation(finalImage);
     BOOL successfullyStored = [imageData writeToFile:imageLocationPath atomically:YES];
     NSLog(@"succesfullyStored:%d",successfullyStored);
-    return imageLocationPath;
+    return imageString;
 }
 
 - (NSString *)createRandomOrderArrayWithFuzzleWidth {
-    NSInteger fuzWidthLength = pow([self.fuzzleWidth doubleValue], 2.0);
+    NSInteger fuzWidthLength = pow((double)self.fuzzleWidth, 2.0);
     NSMutableArray *tempOrder = [NSMutableArray new];
     for (int k = 0; k < fuzWidthLength; k++) {
         NSNumber *currentNumber = [[NSNumber alloc] initWithInt:k];
@@ -197,9 +193,9 @@
         tempOrder[l] = [tempOrderCopy objectAtIndex:randInt];
         [tempOrderCopy removeObjectAtIndex:randInt];
     }
-    return [tempOrder componentsJoinedByString:@""];
+    NSLog(@"pause");
+    return [tempOrder componentsJoinedByString:@","];    
 }
-
 
 - (IBAction)cancelButtonTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

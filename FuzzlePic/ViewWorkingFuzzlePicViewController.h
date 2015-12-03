@@ -10,10 +10,20 @@
 #import "WorkingFuzzlePicCollectionViewController.h"
 #import "FuzzlePicObject.h"
 
+static NSString * const FuzzleTileWasMoved = @"fuzzleTileWasMoved";
+
+typedef NS_ENUM(NSInteger, squareIsEmpty) {
+    topSquareIsEmpty,
+    rightSquareIsEmpty,
+    bottomSquareIsEmpty,
+    leftSquareIsEmpty
+};
+
 @interface ViewWorkingFuzzlePicViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *fuzzlePicImageView;
+@property (weak,nonatomic) IBOutlet UIImageView *fuzzlePicImageView;
 
 @property (strong,nonatomic) FuzzlePicObject *fuzzlePicObject;
 @property (strong,nonatomic) UIImage *workingImage;
+@property (assign,nonatomic) NSInteger fuzzleWidth;
 
 @end

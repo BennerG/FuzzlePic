@@ -16,7 +16,8 @@
 @property (strong,nonatomic,readonly) NSArray *completedFuzzles;
 
 + (FuzzlePicObjectController *)sharedInstance;
-- (FuzzlePicObject *)createFuzzlePicObjectWithImagePath:(NSString *)imagePath currentState:(NSString *)currentState;
+- (FuzzlePicObject *)createFuzzlePicObjectWithImagePath:(NSString *)imagePath currentState:(NSString *)currentState fuzzleWidth:(NSInteger)fuzzleWidth;
 - (void)removeFuzzlePicObject:(FuzzlePicObject *)fuzzlePic;
+- (void)saveToPersistentStorage;
 
 @end

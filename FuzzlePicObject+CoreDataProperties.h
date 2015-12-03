@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *currentState;
 @property (nullable, nonatomic, retain) NSString *imageID;
 @property (nullable, nonatomic, retain) NSNumber *imageIndex;
+@property (nullable, nonatomic, retain) NSNumber *fuzzleWidth;
 
 @end
 

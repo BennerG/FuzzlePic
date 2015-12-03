@@ -16,5 +16,6 @@
 @dynamic currentState;
 @dynamic imageID;
 @dynamic imageIndex;
+@dynamic fuzzleWidth;
 
 @end
