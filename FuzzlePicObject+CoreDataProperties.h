@@ -2,7 +2,7 @@
 //  FuzzlePicObject+CoreDataProperties.h
 //  FuzzlePic
 //
-//  Created by Benjamin Thomas Gurrola on 11/21/15.
+//  Created by Benjamin Thomas Gurrola on 12/2/15.
 //  Copyright © 2015 Benjamin Thomas Gurrola. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *currentState;
 @property (nullable, nonatomic, retain) NSString *imageID;
 @property (nullable, nonatomic, retain) NSNumber *imageIndex;
+@property (nullable, nonatomic, retain) NSNumber *fuzzleWidth;
 
 @end
 
