@@ -10,4 +10,10 @@
 
 @implementation ImageBlock
 
+- (instancetype)initImageBlockWithSourceLocation:(NSInteger)sourceLocation image:(UIImage *)image {
+    self.initialImageIndex = sourceLocation;
+    self.blockImageView.image = image;
+    return self;
+}
+
 @end

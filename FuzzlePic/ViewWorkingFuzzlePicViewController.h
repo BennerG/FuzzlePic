@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "WorkingFuzzlePicCollectionViewController.h"
 #import "FuzzlePicObject.h"
+#import "ImageBlock.h"
 
 @interface ViewWorkingFuzzlePicViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *fuzzlePicImageView;
 
 @property (strong,nonatomic) FuzzlePicObject *fuzzlePicObject;
 @property (strong,nonatomic) UIImage *workingImage;
+
+@property (strong,nonatomic) NSArray *currentState;
 
 @end

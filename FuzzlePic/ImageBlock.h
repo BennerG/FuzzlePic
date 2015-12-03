@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ImageBlock : NSObject
+
+@property (nonatomic,assign) NSInteger initialImageIndex;
+@property (nonatomic,strong) UIImageView *blockImageView;
+
+- (instancetype)initImageBlockWithSourceLocation:(NSInteger)sourceLocation image:(UIImage *)image;
 
 @end

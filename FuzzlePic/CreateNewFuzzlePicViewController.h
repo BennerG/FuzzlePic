@@ -14,9 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UIPickerView *fuzzleSizeSelector;
-@property (strong,nonatomic) NSNumber *fuzzleWidth;
+@property (assign,nonatomic) NSInteger fuzzleWidth;
 @property (strong,nonatomic) FuzzlePicObject *fuzzlePicObject;
-
-
-
 @end
